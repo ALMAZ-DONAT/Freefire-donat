@@ -1,1 +1,251 @@
-https://github.com/bezymniy-debug/Freefire-donat.git
+
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#070c15">
+<meta name="description" content="ALMAZ X — заказ алмазов Free Fire. Выбирай пакет и подготовь заказ.">
+<title>ALMAZ X • Free Fire Donat</title>
+
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#070c15;
+  --panel:#0d1727;
+  --border:#1c3450;
+  --blue:#31c8ff;
+  --text:#f2f7ff;
+  --muted:#91a7c3;
+}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial,sans-serif;
+}
+.wrap{max-width:900px;margin:auto;padding:18px}
+header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 0;border-bottom:1px solid var(--border);
+  font-size:20px;font-weight:bold;gap:10px;
+}
+.logo{color:var(--blue);letter-spacing:2px}
+.server{font-size:11px;color:var(--muted)}
+.hero,.panel,.product{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:16px;
+}
+.hero{padding:22px;margin:18px 0}
+h1{font-size:clamp(32px,7vw,48px);line-height:1.1;margin:12px 0}
+h2{font-size:21px}
+.blue{color:var(--blue)}
+p{line-height:1.6}
+.products{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+.product{
+  padding:17px 8px;
+  color:var(--text);
+  font-size:16px;
+  cursor:pointer;
+  transition:.2s;
+}
+.product:hover{border-color:var(--blue)}
+.product.selected{
+  background:#12334c;
+  border:1px solid var(--blue);
+  box-shadow:0 0 15px #31c8ff20;
+}
+.panel{padding:18px;margin:20px 0}
+label{display:block;margin-top:12px;font-size:14px}
+input,select,button{
+  width:100%;padding:14px;border-radius:10px;
+  font-size:16px;
+}
+input,select{
+  background:#080f1a;color:white;
+  border:1px solid #2a4562;margin-top:7px;
+}
+button{
+  background:#102941;color:white;
+  border:1px solid var(--blue);cursor:pointer;
+}
+.primary{
+  background:var(--blue);color:#07111f;
+  font-weight:bold;margin-top:16px;border:0;
+}
+.primary:hover{filter:brightness(1.08)}
+.result{
+  padding:14px;background:#080f1a;
+  border:1px solid var(--border);
+  border-radius:12px;margin-top:15px;
+  overflow-wrap:anywhere;
+}
+.note{font-size:12px;color:var(--muted);line-height:1.6}
+footer{text-align:center;padding:16px}
+@media(min-width:650px){
+  .products{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<header>
+  <div>💎 <span class="logo">ALMAZ X</span></div>
+  <span class="server">FREE FIRE • СНГ</span>
+</header>
+
+<section class="hero">
+  <p class="blue">⚡ ALMAZ X DONAT</p>
+  <h1>ТВОИ <span class="blue">АЛМАЗЫ.</span><br>ТВОЙ СТИЛЬ.</h1>
+  <p>Выбирай пакет алмазов Free Fire и подготовь заказ за несколько секунд.</p>
+</section>
+
+<h2>💎 ПАКЕТЫ АЛМАЗОВ</h2>
+
+<div class="products" id="products">
+  <button type="button" class="product selected" data-d="100" data-p="8">💎 100<br><br>8 сомонӣ</button>
+  <button type="button" class="product" data-d="310" data-p="27">💎 310<br><br>27 сомонӣ</button>
+  <button type="button" class="product" data-d="520" data-p="45">💎 520<br><br>45 сомонӣ</button>
+  <button type="button" class="product" data-d="1060" data-p="90">💎 1060<br><br>90 сомонӣ</button>
+  <button type="button" class="product" data-d="2180" data-p="185">💎 2180<br><br>185 сомонӣ</button>
+  <button type="button" class="product" data-d="5600" data-p="450">💎 5600<br><br>450 сомонӣ</button>
+</div>
+
+<section class="panel">
+  <h2>📋 ОФОРМЛЕНИЕ ЗАКАЗА</h2>
+
+  <form id="orderForm">
+    <label for="playerId">Игровой ID Free Fire *</label>
+    <input id="playerId" inputmode="numeric"
+      pattern="[0-9]{5,15}" maxlength="15"
+      placeholder="Введи игровой ID" required>
+
+    <label for="nick">Никнейм (необязательно)</label>
+    <input id="nick" maxlength="40" placeholder="Твой ник">
+
+    <label for="contact">Контакт для связи</label>
+    <input id="contact" maxlength="80"
+      placeholder="@username или телефон">
+
+    <label for="payment">Способ оплаты</label>
+    <select id="payment">
+      <option>Душанбе Сити</option>
+      <option>Алиф</option>
+      <option>Эсхата</option>
+      <option>Амонатбонк</option>
+      <option>Баланс телефона</option>
+      <option>Терминал</option>
+    </select>
+
+    <div class="result">
+      <p>Сайт: <strong class="blue">ALMAZ X</strong></p>
+      <p>Пакет: <strong id="diamonds">100 алмазов</strong></p>
+      <p>Цена: <strong class="blue" id="price">8 сомонӣ</strong></p>
+    </div>
+
+    <button class="primary" type="submit">
+      ⚡ ПОДГОТОВИТЬ ЗАКАЗ
+    </button>
+  </form>
+
+  <div class="result" id="result" aria-live="polite">
+    Выбери пакет и введи игровой ID.
+  </div>
+
+  <button type="button" id="copyOrder" style="margin-top:10px">
+    📋 СКОПИРОВАТЬ ЗАКАЗ
+  </button>
+
+  <p class="note">
+    Демоверсия ALMAZ X: оплата не списывается, алмазы
+    автоматически не отправляются. Не вводи пароль Free Fire
+    или коды подтверждения. Перед оплатой дождись подтверждения
+    продавца.
+  </p>
+</section>
+
+<footer>
+  <strong class="logo">ALMAZ X</strong>
+  <p class="note">
+    Неофициальный сайт для подготовки заказов.
+    Не связан с Garena или Free Fire.
+  </p>
+</footer>
+
+</div>
+
+<script>
+let diamonds = 100;
+let price = 8;
+let orderText = "";
+
+const products = document.querySelectorAll(".product");
+const diamondsLabel = document.querySelector("#diamonds");
+const priceLabel = document.querySelector("#price");
+const result = document.querySelector("#result");
+
+products.forEach(button => {
+  button.addEventListener("click", () => {
+    products.forEach(item => item.classList.remove("selected"));
+    button.classList.add("selected");
+
+    diamonds = Number(button.dataset.d);
+    price = Number(button.dataset.p);
+
+    diamondsLabel.textContent = diamonds + " алмазов";
+    priceLabel.textContent = price + " сомонӣ";
+    result.textContent = "Пакет выбран. Введи игровой ID.";
+    orderText = "";
+  });
+});
+
+document.querySelector("#orderForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  const id = document.querySelector("#playerId").value.trim();
+  const nick = document.querySelector("#nick").value.trim();
+  const contact = document.querySelector("#contact").value.trim();
+  const payment = document.querySelector("#payment").value;
+
+  if (!/^[0-9]{5,15}$/.test(id)) {
+    result.textContent = "Проверь игровой ID: нужно от 5 до 15 цифр.";
+    return;
+  }
+
+  orderText =
+    "ALMAZ X — ЗАКАЗ FREE FIRE\n" +
+    "Пакет: " + diamonds + " алмазов\n" +
+    "Цена: " + price + " сомонӣ\n" +
+    "Игровой ID: " + id + "\n" +
+    "Никнейм: " + (nick || "Не указан") + "\n" +
+    "Контакт: " + (contact || "Не указан") + "\n" +
+    "Оплата: " + payment + "\n" +
+    "Статус: ожидает подтверждения продавца";
+
+  result.textContent = orderText;
+});
+
+document.querySelector("#copyOrder").addEventListener("click", async () => {
+  if (!orderText) {
+    result.textContent = "Сначала заполни ID и подготовь заказ.";
+    return;
+  }
+
+  try {
+    await navigator.clipboard.writeText(orderText);
+    result.textContent = "Заказ скопирован! Можешь отправить его продавцу.";
+  } catch (error) {
+    result.textContent = orderText +
+      "\n\nВыдели текст заказа и скопируй вручную.";
+  }
+});
+</script>
+</body>
+</html>
