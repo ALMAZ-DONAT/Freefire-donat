@@ -1,1 +1,94 @@
 
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07111f">
+<title>FreeFire-Donat • Алмазы СНГ</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#070c15;color:#f2f7ff;font-family:Arial,sans-serif}
+.wrap{max-width:900px;margin:auto;padding:20px}
+header{padding:20px 0;border-bottom:1px solid #1c3450;font-weight:bold}
+.blue{color:#31c8ff}
+.hero,.panel,.product{background:#0d1727;border:1px solid #1c3450;border-radius:16px;padding:18px;margin:14px 0}
+h1{font-size:38px}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+button,input,select{width:100%;padding:13px;border-radius:10px;font-size:16px}
+button{background:#102941;color:white;border:1px solid #31c8ff;cursor:pointer}
+.product.selected{background:#153957}
+input,select{background:#080f1a;color:white;border:1px solid #2a4562;margin:6px 0 12px}
+label{display:block}
+.primary{background:#31c8ff;color:#07111f;font-weight:bold;margin-top:12px}
+.note{color:#91a7c3;font-size:13px;line-height:1.5}
+@media(min-width:650px){.products{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>💎 FREEFIRE-<span class="blue">DONAT</span> <span class="note">• СЕРВЕР СНГ</span></header>
+<section class="hero">
+<h1>ТВОИ <span class="blue">АЛМАЗЫ.</span><br>ТВОЙ СТИЛЬ.</h1>
+<p>Выбери пакет, введи игровой ID и подготовь заказ.</p>
+</section>
+
+<h2>💎 Выбери пакет алмазов</h2>
+<div class="products" id="products">
+<button class="product selected" data-d="100" data-p="8">💎 100<br>8 сомонӣ</button>
+<button class="product" data-d="310" data-p="27">💎 310<br>27 сомонӣ</button>
+<button class="product" data-d="520" data-p="45">💎 520<br>45 сомонӣ</button>
+<button class="product" data-d="1060" data-p="90">💎 1060<br>90 сомонӣ</button>
+<button class="product" data-d="2180" data-p="185">💎 2180<br>185 сомонӣ</button>
+<button class="product" data-d="5600" data-p="450">💎 5600<br>450 сомонӣ</button>
+</div>
+
+<section class="panel">
+<h2>📋 Оформить заказ</h2>
+<label for="playerId">Игровой ID Free Fire</label>
+<input id="playerId" inputmode="numeric" placeholder="Введи игровой ID">
+<label for="nick">Никнейм (необязательно)</label>
+<input id="nick" placeholder="Твой ник">
+<label for="contact">Контакт (необязательно)</label>
+<input id="contact" placeholder="@username или телефон">
+<label for="payment">Способ оплаты</label>
+<select id="payment">
+<option>Душанбе Сити</option>
+<option>Алиф</option>
+<option>Эсхата</option>
+<option>Амонатбонк</option>
+<option>Баланс телефона</option>
+<option>Терминал</option>
+</select>
+<p>Пакет: <strong id="diamonds">100 алмазов</strong></p>
+<p>Цена: <strong class="blue" id="price">8 сомонӣ</strong></p>
+<button class="primary" id="order">Подготовить заказ</button>
+<div class="hero" id="result">Введи игровой ID и выбери пакет.</div>
+<p class="note">Демо-версия: деньги не списываются, алмазы не отправляются. Не вводи пароль или коды подтверждения.</p>
+</section>
+<p class="note">FREEFIRE-DONAT • Неофициальный демонстрационный сайт.</p>
+</div>
+<script>
+let d=100,p=8;
+document.querySelectorAll(".product").forEach(b=>{
+ b.onclick=()=>{
+  document.querySelectorAll(".product").forEach(x=>x.classList.remove("selected"));
+  b.classList.add("selected");
+  d=Number(b.dataset.d);p=Number(b.dataset.p);
+  document.querySelector("#diamonds").textContent=d+" алмазов";
+  document.querySelector("#price").textContent=p+" сомонӣ";
+ };
+});
+document.querySelector("#order").onclick=()=>{
+ const id=document.querySelector("#playerId").value.trim();
+ if(!/^\d{5,15}$/.test(id)){alert("Введи игровой ID: от 5 до 15 цифр.");return;}
+ document.querySelector("#result").textContent=
+ "Демо-заказ создан. Пакет: "+d+" алмазов; цена: "+p+
+ " сомонӣ; ID: "+id+"; оплата: "+
+ document.querySelector("#payment").value+
+ ". Платёжная система ещё не подключена.";
+};
+</script>
+</body>
+</html>
+
