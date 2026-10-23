@@ -1,1 +1,83 @@
 
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALMAZ X | UID Checker</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #080b14;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .card {
+      width: 100%;
+      max-width: 390px;
+      padding: 25px;
+      border: 1px solid #28334b;
+      border-radius: 20px;
+      background: #111827;
+      box-shadow: 0 0 30px #00c8ff15;
+    }
+    h1 { color: #35d5ff; text-align: center; }
+    p { color: #aab6ca; text-align: center; }
+    input, button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 12px;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    input {
+      background: #080b14;
+      color: white;
+      border: 1px solid #35435e;
+    }
+    button {
+      border: 0;
+      background: #24c8f0;
+      color: #06101a;
+      font-weight: bold;
+    }
+    #result {
+      margin-top: 18px;
+      line-height: 1.6;
+      overflow-wrap: anywhere;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>ALMAZ X 💎</h1>
+    <p>Free Fire UID Checker</p>
+    <input id="uid" inputmode="numeric"
+      placeholder="Free Fire Player ID">
+    <button onclick="checkUID()">Санҷидани UID</button>
+    <div id="result"></div>
+  </main>
+
+  <script>
+    function checkUID() {
+      const uid = document.getElementById('uid').value.trim();
+      const result = document.getElementById('result');
+
+      if (!/^\d{6,15}$/.test(uid)) {
+        result.textContent = 'UID-ро дуруст ворид кун.';
+        return;
+      }
+
+      result.textContent =
+        'UID қабул шуд: ' + uid +
+        '. Барои нишон додани номи бозингар API-и коркунандаи CIS лозим аст.';
+    }
+  </script>
+</body>
+</html>
+
