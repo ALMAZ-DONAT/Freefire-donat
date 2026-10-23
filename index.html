@@ -1,180 +1,146 @@
 <!doctype html>
 <html lang="tg">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#09090d">
-  <title>ALMAZ X — Free Fire Donat</title>
-  <style>
-    :root{color-scheme:dark;--bg:#09090d;--panel:#14141c;--panel2:#1b1b26;--text:#f7f7fb;--muted:#a4a4b5;--red:#ff3158;--gold:#ffbf36;--line:#2b2b39}
-    *{box-sizing:border-box}
-    body{margin:0;background:radial-gradient(circle at top,#25101c 0,#09090d 44%);font-family:Arial,Helvetica,sans-serif;color:var(--text)}
-    .wrap{max-width:980px;margin:auto;padding:20px 15px 45px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0 25px}
-    .logo{font-size:24px;font-weight:1000;letter-spacing:1.5px}.logo span{color:var(--red)}
-    .tag{border:1px solid #49303a;color:#ff9aad;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:bold}
-    .hero{text-align:center;padding:25px 8px 28px}
-    .eyebrow{color:var(--gold);font-weight:bold;font-size:12px;letter-spacing:3px}
-    h1{font-size:clamp(36px,8vw,65px);line-height:1;margin:13px 0}
-    h1 span{color:var(--red)}
-    .hero p{color:var(--muted);line-height:1.6;max-width:560px;margin:0 auto}
-    .notice{margin:16px auto 0;max-width:600px;padding:11px 13px;background:#211a0d;border:1px solid #59421b;border-radius:12px;color:#ffe0a0;font-size:12px;line-height:1.5}
-    .section-title{font-size:20px;margin:20px 0 13px}
-    .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:12px}
-    .product{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:17px 12px;text-align:center;transition:.18s}
-    .product:hover{transform:translateY(-3px);border-color:#8a2b45}
-    .diamond{font-size:31px;filter:drop-shadow(0 0 8px #4dbfff)}
-    .amount{font-size:19px;font-weight:900;margin:8px 0 4px}
-    .price{font-size:14px;color:var(--gold);font-weight:bold}
-    .product button,.primary{border:0;background:linear-gradient(90deg,#ff3158,#ff5d45);color:white;border-radius:10px;padding:11px 13px;font-weight:800;cursor:pointer;width:100%;margin-top:13px}
-    button:active{transform:scale(.98)}
-    .layout{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:23px}
-    .card{background:rgba(20,20,28,.92);border:1px solid var(--line);border-radius:18px;padding:18px}
-    label{display:block;color:#d9d9e4;font-size:13px;margin:13px 0 7px}
-    input,select{width:100%;background:#0d0d13;color:white;border:1px solid #343443;border-radius:10px;padding:12px;font-size:15px;outline:none}
-    input:focus,select:focus{border-color:var(--red)}
-    .hint{color:var(--muted);font-size:12px;line-height:1.5;margin-top:7px}
-    .selected{color:var(--gold);font-weight:bold;margin-top:12px;min-height:20px}
-    .primary{font-size:15px;padding:14px;margin-top:17px}
-    .result{display:none;margin-top:15px;padding:13px;background:#101b15;border:1px solid #285b3b;border-radius:12px;white-space:pre-wrap;line-height:1.6;font-size:13px;overflow-wrap:anywhere}
-    footer{text-align:center;color:var(--muted);font-size:12px;line-height:1.7;margin-top:25px}
-    @media(max-width:650px){.layout{grid-template-columns:1fr}.wrap{padding:14px 12px 35px}.hero{padding-top:18px}header{padding-bottom:12px}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#09090f">
+<title>ALMAZ X — Free Fire Donat</title>
+<style>
+:root{color-scheme:dark;--bg:#09090f;--panel:#151520;--line:#303044;--text:#f6f6fb;--muted:#a9a9bb;--red:#ff3158;--gold:#ffc247}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#29101e 0,#09090f 48%);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+.wrap{max-width:1050px;margin:auto;padding:18px 14px 40px}header{display:flex;justify-content:space-between;align-items:center;padding:8px 0 22px;gap:10px}.logo{font-weight:1000;font-size:25px;letter-spacing:1.5px}.logo span,h1 span{color:var(--red)}.pill{font-size:11px;font-weight:bold;border:1px solid #633044;border-radius:50px;padding:7px 10px;color:#ff9eb2}
+.hero{text-align:center;padding:20px 5px 26px}.eyebrow{color:var(--gold);font-size:12px;letter-spacing:3px;font-weight:bold}h1{font-size:clamp(38px,8vw,67px);line-height:1;margin:12px 0}.hero p{color:var(--muted);line-height:1.6;max-width:590px;margin:0 auto}.notice{max-width:700px;margin:15px auto 0;padding:11px 13px;background:#211a0e;border:1px solid #58421e;border-radius:12px;color:#ffe1a5;font-size:12px;line-height:1.55}
+.tabs{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0 19px}.tab{background:#171722;color:#d7d7e4;border:1px solid var(--line);border-radius:10px;padding:11px 15px;font-weight:bold;cursor:pointer}.tab.active{background:#4a1728;border-color:var(--red);color:white}
+h2{font-size:21px;margin:18px 0 13px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.product{background:linear-gradient(145deg,#1d1d2a,#12121b);border:1px solid var(--line);border-radius:16px;padding:16px 12px;text-align:center}.product:hover{border-color:#873149}.emoji{font-size:31px}.name{font-size:17px;font-weight:900;margin:8px 0 5px}.desc{font-size:12px;color:var(--muted);min-height:18px}.price{font-size:15px;color:var(--gold);font-weight:bold;margin-top:10px}.product button,.primary{width:100%;border:0;border-radius:10px;padding:12px;margin-top:13px;background:linear-gradient(90deg,#ff3158,#ff6247);color:white;font-weight:800;cursor:pointer}.layout{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:25px}.card{background:rgba(21,21,32,.95);border:1px solid var(--line);border-radius:17px;padding:18px}label{display:block;font-size:13px;color:#e0e0eb;margin:13px 0 7px}input,select{width:100%;padding:12px;background:#0c0c13;border:1px solid #38384b;border-radius:10px;color:white;font-size:15px}input:focus,select:focus{outline:1px solid var(--red)}.hint{font-size:12px;line-height:1.5;color:var(--muted)}.selected{font-weight:bold;color:var(--gold);line-height:1.5;margin-top:12px;min-height:20px}.result{display:none;background:#101b15;border:1px solid #285b3b;border-radius:12px;padding:13px;margin-top:13px;white-space:pre-wrap;line-height:1.6;font-size:13px;overflow-wrap:anywhere}.copy{display:none;background:#303044!important}.footer{text-align:center;color:var(--muted);font-size:12px;line-height:1.7;margin-top:24px}
+@media(max-width:650px){.layout{grid-template-columns:1fr}.wrap{padding:13px 11px 30px}.hero{padding-top:12px}.tab{flex:1}}
+</style>
 </head>
 <body>
-  <main class="wrap">
-    <header>
-      <div class="logo">ALMAZ <span>X</span></div>
-      <div class="tag">FREE FIRE • DONAT</div>
-    </header>
+<main class="wrap">
+<header><div class="logo">ALMAZ <span>X</span></div><div class="pill">FREE FIRE • DONAT</div></header>
+<section class="hero">
+<div class="eyebrow">FAST • SIMPLE • EASY</div>
+<h1>ALMAZ <span>X</span></h1>
+<p>Алмос, Membership ва ваучерҳои Free Fire-ро интихоб кун ва дархости худро омода соз.</p>
+<div class="notice">Ин версияи намоишӣ аст: пардохт ва расонидани маҳсулот автоматӣ нест. Нархҳоро пеш аз пардохт бо фурӯшанда тасдиқ кун. Парол ё рамзи SMS талаб карда намешавад.</div>
+</section>
 
-    <section class="hero">
-      <div class="eyebrow">FAST • SIMPLE • SECURE</div>
-      <h1>ALMAZ <span>X</span></h1>
-      <p>Алмосҳои Free Fire-ро интихоб кун ва дархости худро омода соз.</p>
-      <div class="notice">ЭЗОҲ: Ин версияи намоишӣ аст. Пардохт ва фиристодани алмос автоматӣ нест; пеш аз пардохт фармоишро бо фурӯшанда тасдиқ кун.</div>
-    </section>
+<nav class="tabs" aria-label="Категорияҳо">
+<button class="tab active" data-tab="diamonds">💎 Алмосҳо</button>
+<button class="tab" data-tab="vouchers">🎟️ Ваучерҳо</button>
+</nav>
+<section id="diamondsSection">
+<h2>💎 Бастаҳои алмос</h2>
+<div class="grid">
+<article class="product"><div class="emoji">💎</div><div class="name">100 алмос</div><div class="desc">Бастаи хурд</div><div class="price">8 сомонӣ</div><button data-kind="Алмос" data-item="100 алмос" data-price="8">Интихоб</button></article>
+<article class="product"><div class="emoji">💎</div><div class="name">310 алмос</div><div class="desc">Бастаи маъмул</div><div class="price">27 сомонӣ</div><button data-kind="Алмос" data-item="310 алмос" data-price="27">Интихоб</button></article>
+<article class="product"><div class="emoji">💎</div><div class="name">520 алмос</div><div class="desc">Бастаи миёна</div><div class="price">45 сомонӣ</div><button data-kind="Алмос" data-item="520 алмос" data-price="45">Интихоб</button></article>
+<article class="product"><div class="emoji">💎</div><div class="name">1060 алмос</div><div class="desc">Бастаи калон</div><div class="price">90 сомонӣ</div><button data-kind="Алмос" data-item="1060 алмос" data-price="90">Интихоб</button></article>
+<article class="product"><div class="emoji">💎</div><div class="name">2180 алмос</div><div class="desc">Бастаи калонтар</div><div class="price">185 сомонӣ</div><button data-kind="Алмос" data-item="2180 алмос" data-price="185">Интихоб</button></article>
+<article class="product"><div class="emoji">💎</div><div class="name">5600 алмос</div><div class="desc">Бастаи максималӣ</div><div class="price">450 сомонӣ</div><button data-kind="Алмос" data-item="5600 алмос" data-price="450">Интихоб</button></article>
+</div>
+</section>
+<section id="vouchersSection" hidden>
+<h2>🎟️ Ваучерҳо ва Membership</h2>
+<div class="grid">
+<article class="product"><div class="emoji">📅</div><div class="name">Weekly Membership</div><div class="desc">Узвияти 7-рӯза</div><div class="price">Нархро тасдиқ кун</div><button data-kind="Ваучер" data-item="Weekly Membership" data-price="0">Интихоб</button></article>
+<article class="product"><div class="emoji">🗓️</div><div class="name">Monthly Membership</div><div class="desc">Узвияти 30-рӯза</div><div class="price">Нархро тасдиқ кун</div><button data-kind="Ваучер" data-item="Monthly Membership" data-price="0">Интихоб</button></article>
+<article class="product"><div class="emoji">⬆️</div><div class="name">Level Up Pass</div><div class="desc">Level Up Pass</div><div class="price">Нархро тасдиқ кун</div><button data-kind="Ваучер" data-item="Level Up Pass" data-price="0">Интихоб</button></article>
+<article class="product"><div class="emoji">🔥</div><div class="name">Booyah Pass</div><div class="desc">Pass-и мавсимӣ</div><div class="price">Нархро тасдиқ кун</div><button data-kind="Ваучер" data-item="Booyah Pass" data-price="0">Интихоб</button></article>
+</div>
+<p class="hint">Нархи ваучерҳо ҳоло нишон дода нашудааст, чун нархи дақиқи таъминкунанда тасдиқ нашудааст. Пеш аз пардохт нархро пурс.</p>
+</section>
 
-    <h2 class="section-title">💎 Алмосҳоро интихоб кун</h2>
-    <section class="products" aria-label="Бастаҳои алмос">
-      <article class="product"><div class="diamond">💎</div><div class="amount">100 алмос</div><div class="price">8 сомонӣ</div><button type="button" data-amount="100" data-price="8">Интихоб</button></article>
-      <article class="product"><div class="diamond">💎</div><div class="amount">310 алмос</div><div class="price">27 сомонӣ</div><button type="button" data-amount="310" data-price="27">Интихоб</button></article>
-      <article class="product"><div class="diamond">💎</div><div class="amount">520 алмос</div><div class="price">45 сомонӣ</div><button type="button" data-amount="520" data-price="45">Интихоб</button></article>
-      <article class="product"><div class="diamond">💎</div><div class="amount">1060 алмос</div><div class="price">90 сомонӣ</div><button type="button" data-amount="1060" data-price="90">Интихоб</button></article>
-      <article class="product"><div class="diamond">💎</div><div class="amount">2180 алмос</div><div class="price">185 сомонӣ</div><button type="button" data-amount="2180" data-price="185">Интихоб</button></article>
-      <article class="product"><div class="diamond">💎</div><div class="amount">5600 алмос</div><div class="price">450 сомонӣ</div><button type="button" data-amount="5600" data-price="450">Интихоб</button></article>
-    </section>
+<div class="layout">
+<section class="card">
+<h2>🎮 Маълумоти бозӣ</h2>
+<label for="playerId">Free Fire ID *</label><input id="playerId" inputmode="numeric" maxlength="15" placeholder="Масалан: 1234567890">
+<label for="nickname">Никнейм (ихтиёрӣ)</label><input id="nickname" maxlength="30" placeholder="Номи бозигар">
+<label for="contact">Рақами тамос ё Telegram *</label><input id="contact" maxlength="60" placeholder="+992... ё @username">
+<p class="hint">Парол, рамзи SMS ё маълумоти воридшавии аккаунтро нанавис.</p>
+</section>
+<section class="card">
+<h2>💳 Тарзи пардохт</h2>
+<label for="payment">Усули пардохт *</label>
+<select id="payment"><option value="">— Интихоб кун —</option><option>Душанбе Сити</option><option>Алиф</option><option>Эсхата</option><option>Амонатбонк</option><option>Баланс телефон</option><option>Терминал</option></select>
+<div class="selected" id="selected">Аввал маҳсулотро интихоб кун.</div>
+<button class="primary" id="makeOrder" type="button">Омода кардани фармоиш</button>
+<div class="result" id="result" role="status"></div>
+<button class="primary copy" id="copyOrder" type="button">Нусха гирифтани фармоиш</button>
+</section>
+</div>
+<footer class="footer">ALMAZ X © <span id="year"></span><br>Ин сайт намоишӣ аст ва ба Garena расман вобаста нест.</footer>
+</main>
+<script>
+let chosen = null;
+let orderText = '';
+const selected = document.getElementById('selected');
+const result = document.getElementById('result');
+const copyButton = document.getElementById('copyOrder');
+document.getElementById('year').textContent = new Date().getFullYear();
 
-    <div class="layout">
-      <section class="card">
-        <h2 class="section-title">🎮 Маълумоти бозӣ</h2>
-        <label for="playerId">Free Fire ID *</label>
-        <input id="playerId" inputmode="numeric" autocomplete="off" maxlength="15" placeholder="Масалан: 1234567890">
-        <label for="nickname">Никнейм (ихтиёрӣ)</label>
-        <input id="nickname" autocomplete="off" maxlength="30" placeholder="Номи бозигар">
-        <label for="contact">Рақами тамос ё Telegram *</label>
-        <input id="contact" autocomplete="off" maxlength="60" placeholder="+992... ё @username">
-        <p class="hint">Парол, рамзи SMS ё маълумоти воридшавии аккаунтро нанавис.</p>
-      </section>
+document.querySelectorAll('[data-tab]').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('[data-tab]').forEach(t => t.classList.toggle('active', t === tab));
+    document.getElementById('diamondsSection').hidden = tab.dataset.tab !== 'diamonds';
+    document.getElementById('vouchersSection').hidden = tab.dataset.tab !== 'vouchers';
+  });
+});
 
-      <section class="card">
-        <h2 class="section-title">💳 Тарзи пардохт</h2>
-        <label for="payment">Усули пардохтро интихоб кун</label>
-        <select id="payment">
-          <option value="">— Интихоб кун —</option>
-          <option>Душанбе Сити</option>
-          <option>Алиф</option>
-          <option>Эсхата</option>
-          <option>Амонатбонк</option>
-          <option>Баланс телефон</option>
-          <option>Терминал</option>
-        </select>
-        <div class="selected" id="selected">Ҳоло баста интихоб нашудааст.</div>
-        <button class="primary" type="button" id="makeOrder">Омода кардани фармоиш</button>
-        <div class="result" id="result" role="status"></div>
-        <button class="primary" type="button" id="copyOrder" style="display:none;background:#333342">Нусха гирифтан</button>
-      </section>
-    </div>
-
-    <footer>
-      ALMAZ X © <span id="year"></span><br>
-      Ин сайт намоишӣ аст ва ба Garena расман вобаста нест.
-    </footer>
-  </main>
-
-  <script>
-    let chosen = null;
-    const selected = document.getElementById('selected');
-    const result = document.getElementById('result');
-    const copyButton = document.getElementById('copyOrder');
-    let orderText = '';
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    document.querySelectorAll('[data-amount]').forEach(button => {
-      button.addEventListener('click', () => {
-        chosen = { amount: button.dataset.amount, price: button.dataset.price };
-        selected.textContent = `Интихоб шуд: ${chosen.amount} алмос — ${chosen.price} сомонӣ`;
-        document.querySelectorAll('[data-amount]').forEach(b => {
-          b.textContent = 'Интихоб';
-          b.style.outline = 'none';
-        });
-        button.textContent = '✓ Интихоб шуд';
-        button.style.outline = '2px solid #ffbf36';
-      });
+document.querySelectorAll('[data-item]').forEach(button => {
+  button.addEventListener('click', () => {
+    chosen = {kind:button.dataset.kind,item:button.dataset.item,price:Number(button.dataset.price)};
+    selected.textContent = chosen.price > 0
+      ? `Интихоб шуд: ${chosen.item} — ${chosen.price} сомонӣ`
+      : `Интихоб шуд: ${chosen.item} — нархро пеш аз пардохт тасдиқ кун`;
+    document.querySelectorAll('[data-item]').forEach(b => {
+      b.textContent = 'Интихоб';
+      b.style.outline = 'none';
     });
+    button.textContent = '✓ Интихоб шуд';
+    button.style.outline = '2px solid #ffc247';
+    result.style.display = 'none';
+    copyButton.style.display = 'none';
+  });
+});
 
-    document.getElementById('makeOrder').addEventListener('click', () => {
-      const playerId = document.getElementById('playerId').value.trim();
-      const nickname = document.getElementById('nickname').value.trim();
-      const contact = document.getElementById('contact').value.trim();
-      const payment = document.getElementById('payment').value;
-
-      if (!chosen) {
-        alert('Аввал бастаи алмосро интихоб кун.');
-        return;
-      }
-      if (!/^\d{5,15}$/.test(playerId)) {
-        alert('Free Fire ID бояд аз 5 то 15 рақам бошад.');
-        return;
-      }
-      if (!contact) {
-        alert('Рақами тамос ё Telegram-ро навис.');
-        return;
-      }
-      if (!payment) {
-        alert('Усули пардохтро интихоб кун.');
-        return;
-      }
-
-      orderText =
-        'ALMAZ X — ДАРХОСТИ ФАРМОИШ\\n' +
-        'Free Fire ID: ' + playerId + '\\n' +
-        'Никнейм: ' + (nickname || 'Нишон дода нашудааст') + '\\n' +
-        'Баста: ' + chosen.amount + ' алмос\\n' +
-        'Нарх: ' + chosen.price + ' сомонӣ\\n' +
-        'Пардохт: ' + payment + '\\n' +
-        'Тамос: ' + contact + '\\n\\n' +
-        'Эзоҳ: фармоиш бояд бо фурӯшанда тасдиқ шавад.';
-
-      result.textContent = orderText;
-      result.style.display = 'block';
-      copyButton.style.display = 'block';
-    });
-
-    copyButton.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(orderText);
-        copyButton.textContent = '✓ Нусха гирифта шуд';
-      } catch (error) {
-        const range = document.createRange();
-        range.selectNodeContents(result);
-        const selection = window.getSelection();
-        selection.removeAllRanges();
-        selection.addRange(range);
-        alert('Матни фармоиш интихоб шуд. Онро нусха гир (Copy).');
-      }
-    });
-  </script>
+document.getElementById('makeOrder').addEventListener('click', () => {
+  const playerId = document.getElementById('playerId').value.trim();
+  const nickname = document.getElementById('nickname').value.trim();
+  const contact = document.getElementById('contact').value.trim();
+  const payment = document.getElementById('payment').value;
+  if (!chosen) return alert('Аввал алмос ё ваучерро интихоб кун.');
+  if (!/^\d{5,15}$/.test(playerId)) return alert('Free Fire ID бояд аз 5 то 15 рақам бошад.');
+  if (!contact) return alert('Рақами тамос ё Telegram-ро навис.');
+  if (!payment) return alert('Усули пардохтро интихоб кун.');
+  const priceLine = chosen.price > 0 ? chosen.price + ' сомонӣ' : 'Пеш аз пардохт бояд тасдиқ шавад';
+  orderText = 'ALMAZ X — ДАРХОСТИ ФАРМОИШ\n' +
+    'Навъ: ' + chosen.kind + '\n' +
+    'Маҳсулот: ' + chosen.item + '\n' +
+    'Нарх: ' + priceLine + '\n' +
+    'Free Fire ID: ' + playerId + '\n' +
+    'Никнейм: ' + (nickname || 'Нишон дода нашудааст') + '\n' +
+    'Пардохт: ' + payment + '\n' +
+    'Тамос: ' + contact + '\n\n' +
+    'Эзоҳ: ин дархост аст; пардохт ва расониданро бо фурӯшанда тасдиқ кун.';
+  result.textContent = orderText;
+  result.style.display = 'block';
+  copyButton.style.display = 'block';
+});
+copyButton.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(orderText);
+    copyButton.textContent = '✓ Нусха гирифта шуд';
+  } catch (e) {
+    const range = document.createRange();
+    range.selectNodeContents(result);
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    alert('Матни фармоиш интихоб шуд. Copy-ро пахш кун.');
+  }
+});
+</script>
 </body>
 </html>
+
